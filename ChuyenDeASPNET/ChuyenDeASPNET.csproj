@@ -131,31 +131,31 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Context\Brand.cs">
-      <DependentUpon>dbModerl.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\Category.cs">
-      <DependentUpon>dbModerl.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\dbModerl.Context.cs">
+    <Compile Include="Context\dbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbModerl.Context.tt</DependentUpon>
+      <DependentUpon>dbModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\dbModerl.cs">
+    <Compile Include="Context\dbModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbModerl.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Context\dbModerl.Designer.cs">
+    <Compile Include="Context\dbModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbModerl.edmx</DependentUpon>
+      <DependentUpon>dbModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Context\Product.cs">
-      <DependentUpon>dbModerl.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\User.cs">
-      <DependentUpon>dbModerl.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -168,6 +168,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2162,15 +2163,15 @@
     <Content Include="Content\images\posts\2.jpg" />
     <Content Include="Content\images\posts\3.jpg" />
     <Content Include="Content\images\posts\4.jpg" />
-    <Content Include="Context\dbModerl.Context.tt">
+    <Content Include="Context\dbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbModerl.Context.cs</LastGenOutput>
-      <DependentUpon>dbModerl.edmx</DependentUpon>
+      <DependentUpon>dbModel.edmx</DependentUpon>
+      <LastGenOutput>dbModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Context\dbModerl.tt">
+    <Content Include="Context\dbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbModerl.edmx</DependentUpon>
-      <LastGenOutput>dbModerl.cs</LastGenOutput>
+      <DependentUpon>dbModel.edmx</DependentUpon>
+      <LastGenOutput>dbModel.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -2290,12 +2291,12 @@
     <Content Include="Content\admin\plugins\summernote\summernote.js.map" />
     <Content Include="Content\admin\plugins\summernote\summernote.min.js.map" />
     <Content Include="Content\admin\plugins\toastr\toastr.js.map" />
-    <EntityDeploy Include="Context\dbModerl.edmx">
+    <EntityDeploy Include="Context\dbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbModerl.Designer.cs</LastGenOutput>
+      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Context\dbModerl.edmx.diagram">
-      <DependentUpon>dbModerl.edmx</DependentUpon>
+    <Content Include="Context\dbModel.edmx.diagram">
+      <DependentUpon>dbModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

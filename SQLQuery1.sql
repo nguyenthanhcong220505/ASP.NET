@@ -68,8 +68,7 @@ FOREIGN KEY (BrandID) REFERENCES Brand(BrandID);
 INSERT INTO Categories (CategoryName, Description, CreateBy)
 VALUES
 (N'Điện thoại', N'Danh mục các sản phẩm điện thoại', N'Admin'),
-(N'Âm thanh', N'Danh mục các thiết bị âm thanh', N'Admin'),
-(N'Máy tính', N'Danh mục các thiết bị máy tính', N'Admin');
+(N'Âm thanh', N'Danh mục các thiết bị âm thanh', N'Admin'),(N'Máy tính', N'Danh mục các thiết bị máy tính', N'Admin');
 
 -- Dữ liệu cho bảng Brand
 INSERT INTO Brand (BrandName, Description, CreateBy)

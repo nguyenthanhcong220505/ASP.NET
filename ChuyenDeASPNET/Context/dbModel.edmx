@@ -28,6 +28,7 @@
           <Property Name="CreateBy" Type="nvarchar" MaxLength="100" />
           <Property Name="UpdateAt" Type="datetime" />
           <Property Name="UpdateBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -130,6 +131,7 @@
           <Property Name="CreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="UpdateAt" Type="DateTime" Precision="3" />
           <Property Name="UpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Categories" FromRole="Categories" ToRole="Product" />
         </EntityType>
         <EntityType Name="Product">
@@ -192,7 +194,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ASPNETEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ASPNETEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Brands" EntityType="Self.Brand" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Products" EntityType="Self.Product" />
@@ -211,7 +213,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ASPNETModelStoreContainer" CdmEntityContainer="ASPNETEntities">
+        <EntityContainerMapping StorageEntityContainer="ASPNETModelStoreContainer" CdmEntityContainer="ASPNETEntities1">
           <EntitySetMapping Name="Brands">
             <EntityTypeMapping TypeName="ASPNETModel.Brand">
               <MappingFragment StoreEntitySet="Brand">
@@ -235,6 +237,7 @@
                 <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
                 <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
