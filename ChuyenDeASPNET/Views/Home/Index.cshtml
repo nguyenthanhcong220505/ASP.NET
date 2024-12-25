@@ -1,4 +1,10 @@
 ﻿@model ChuyenDeASPNET.Models.HomeModel
+
+
+@{
+    var products = Model.ListProduct;
+    var categories = Model.ListCategory;
+}
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -90,18 +96,16 @@
                         <div class="col-md d-none d-lg-block flex-grow-1">
                             <aside class="special-home-right">
                                 <h6 class="bg-blue text-center text-white mb-0 p-2">Danh mục phổ biến </h6>
-                                @foreach (var item in Model.ListCategory.Take(3))
+                                @foreach (var category in categories.Take(3))
                                 {
                                     <div class="card-banner border-bottom">
                                         <div class="py-3" style="width:80%">
-                                            <h6 class="card-title">@item.CategoryName</h6>
-                                            <a href="@Url.Action("ProductByCategory", "Category")" class="btn btn-secondary btn-sm"> Source now </a>
+                                            <h6 class="card-title">@category.CategoryName</h6>
+                                            <a href="@Url.Action("ProductByCategory", "Category", new { id = category.CategoryID })" class="btn btn-secondary btn-sm">Source now</a>
                                         </div>
-                                        <img src="~/Content/images/items/1.jpg" height="80" class="img-bg">
+                                        <img src="@Url.Content("~/Content/images/items/" + category.Image)" height="80" class="img-bg">
                                     </div>
                                 }
-
-
 
 
                             </aside>
@@ -291,36 +295,44 @@
         <!-- =============== SECTION REQUEST .//END =============== -->
         <!-- =============== SECTION ITEMS =============== -->
         <section class="padding-bottom-sm">
-
             <header class="section-heading heading-line">
                 <h4 class="title-section text-uppercase">Sản phẩm đề xuất</h4>
             </header>
 
             <div class="row row-sm">
-                <div class="row row-sm">
-                    <div class="row row-sm">
-
-                        @foreach (var item in Model.ListProduct.Take(8))
-                        {
-                            <div class="col-xl-2 col-lg-3 col-md-4 col-6">
-                                <div class="card card-sm card-product-grid">
-                                    <a href="@Url.Action("ProductDetail", "Product", new { id = item.ProductID })" class="img-wrap">
-                                        <img src="~/Content/images/items/@item.ProductImage" alt="@item.ProductName">
+                @foreach (var item in Model.ListProduct.Take(8))
+                {
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6 mb-4">
+                        <div class="card card-product-grid">
+                            <!-- Hình ảnh sản phẩm -->
+                            <a href="@Url.Action("ProductDetail", "Product", new { id = item.ProductID })" class="img-wrap">
+                                <img src="~/Content/images/items/@item.ProductImage" alt="@item.ProductName" class="img-fluid">
+                            </a>
+                            <!-- Thông tin sản phẩm -->
+                            <div class="card-body text-center">
+                                <!-- Tên sản phẩm -->
+                                <h6 class="title">
+                                    <a href="@Url.Action("ProductDetail", "Product", new { id = item.ProductID })">
+                                        @item.ProductName
                                     </a>
-                                    <figcaption class="info-wrap">
-                                        <a href="@Url.Action("ProductDetail", "Product", new { id = item.ProductID })" class="title">@item.ProductName</a>
-                                        <div class="price mt-1">
-                                            @item.Price.ToString("C0", System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"))
-                                        </div> <!-- price-wrap.// -->
-                                    </figcaption>
+                                </h6>
+                                <!-- Giá sản phẩm -->
+                                <div class="price mt-2">
+                                    <span class="text-primary font-weight-bold">
+                                        @item.Price.ToString("C0", System.Globalization.CultureInfo.CreateSpecificCulture("vi-VN"))
+                                    </span>
                                 </div>
-                            </div> <!-- col.// -->
-                        }
-
-                    </div> <!-- row.// -->
-                </div> <!-- row.// --> <!-- col.// -->
-            </div> <!-- row.// -->
+                                <!-- Button thêm vào giỏ hàng -->
+                                <a href="@Url.Action("AddToCart", "Cart", new { id = item.ProductID })" class="btn btn-sm btn-success mt-2">
+                                    Thêm vào giỏ hàng
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
         </section>
+
         <!-- =============== SECTION ITEMS .//END =============== -->
         <!-- =============== SECTION SERVICES =============== -->
         <section class="padding-bottom">

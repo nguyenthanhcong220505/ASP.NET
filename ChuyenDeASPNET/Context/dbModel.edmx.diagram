@@ -4,13 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b4a4831cb612492c8f1dbbb8ab132bbb" Name="Diagram1" ZoomLevel="70">
+      <Diagram DiagramId="43bb72444adc4b6bb72b4be46007a98f" Name="Diagram1">
         <EntityTypeShape EntityType="ASPNETModel.Brand" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASPNETModel.Category" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASPNETModel.Category" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ASPNETModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ASPNETModel.User" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="ASPNETModel.FK_Products_Brands" ManuallyRouted="false" />
         <AssociationConnector Association="ASPNETModel.FK_Products_Categories" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ASPNETModel.Order" Width="1.5" PointX="3" PointY="6" />
+        <EntityTypeShape EntityType="ASPNETModel.OrderDetail" Width="1.5" PointX="5.25" PointY="4" />
+        <AssociationConnector Association="ASPNETModel.FK_OrderDetail_Order" />
+        <AssociationConnector Association="ASPNETModel.FK_OrderDetail_Product" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
