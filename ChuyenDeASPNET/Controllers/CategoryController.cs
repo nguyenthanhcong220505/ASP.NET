@@ -10,13 +10,25 @@ namespace ChuyenDeASPNET.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
-        public ActionResult AllCategory()
+        ASPNETEntities3 objASPNETEntities = new ASPNETEntities3();
+
+        public ActionResult Index()
         {
+
             return View();
         }
-        public ActionResult ProductByCategory()
+        public ActionResult AllCategory()
+
         {
-            return View();
+            var lstCategory = objASPNETEntities.Categories.ToList();
+
+            return View(lstCategory);
+        }
+        public ActionResult ProductByCategory(int id)
+
+        {
+            var listProduct = objASPNETEntities.Products.Where(n => n.CategoryID == id).ToList();
+            return View(listProduct);
         }
     }
 }
