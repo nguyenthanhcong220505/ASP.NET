@@ -43,60 +43,31 @@
                         </a> <!-- brand-wrap.// -->
                     </div>
                     <div class="col-xl-6 col-lg-5 col-md-6">
-                        <form action="#" class="search-header">
+                        <form action="@Url.Action("AllProduct", "Product")" method="get" class="search-header">
                             <div class="input-group w-100">
-                                <select class="custom-select border-right" name="category_name">
-                                    <option value="">Tất cả loại</option>
-                                    <option value="codex">Đặc biệt</option>
-                                    <option value="comments">Chỉ những sản phẩm tốt nhất</option>
-                                    <option value="content">Mới nhất</option>
-                                </select>
-                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                                <!-- Ô input tìm kiếm -->
+                                <input type="text" class="form-control" placeholder="Search" name="SearchString" value="@ViewBag.CurentFIlter">
 
+                                <!-- Nút tìm kiếm -->
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
-                                        <i class="fa fa-search"></i> Tìm kiếm
+                                        <i class="fa fa-search"></i> Search
                                     </button>
                                 </div>
                             </div>
-                        </form> <!-- search-wrap .end// -->
+                        </form>
+                        <!-- search-wrap .end// -->
                     </div> <!-- col.// -->
 
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="widgets-wrap float-md-right">
-                            <div class="widget-header mr-3">
-                                @if (Session["idUser"] != null)
-                                {
-                                    <!-- Hiển thị các liên kết cho người dùng đã đăng nhập -->
-                                    <ul style="list-style-type: none; padding-left: 0;">
-                                        <li><a href="~/Home/Logout" class="btn btn-warning">Logout</a></li>
-                                    </ul>
-                                }
-                                else
-                                {
-                                    <!-- Hiển thị các liên kết cho người dùng chưa đăng nhập -->
-                                    <ul style="list-style-type: none; padding-left: 0;">
-                                        <li><a href="~/Home/Register">Đăng ký</a></li>
-                                        <li><a href="~/Home/Login">Đăng nhập</a></li>
-                                    </ul>
-                                }
-                            </div>
                             <div class="widget-header mr-3">
                                 <a href="@Url.Action("Main", "Profile")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-user"></i>
                                         <span class="notify">3</span>
                                     </div>
-                                    <small class="text"> Hồ sơ của tôi </small>
-                                </a>
-                            </div>
-                            <div class="widget-header mr-3">
-                                <a href="#" class="widget-view">
-                                    <div class="icon-area">
-                                        <i class="fa fa-comment-dots"></i>
-                                        <span class="notify">1</span>
-                                    </div>
-                                    <small class="text"> Tin nhắn </small>
+                                    <small class="text">Hồ sơ của tôi</small>
                                 </a>
                             </div>
                             <div class="widget-header mr-3">
@@ -104,20 +75,56 @@
                                     <div class="icon-area">
                                         <i class="fa fa-store"></i>
                                     </div>
-                                    <small class="text"> Đơn hàng </small>
+                                    <small class="text">Đơn hàng</small>
                                 </a>
                             </div>
-                            <div class="widget-header">
+                            <div class="widget-header mr-3">
                                 <a href="@Url.Action("Index", "Cart")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-shopping-cart"></i>
                                     </div>
-                                    <small class="text"> Giỏ hàng </small>
+                                    <small class="text">Giỏ hàng</small>
                                 </a>
                             </div>
 
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <!-- Nút Đăng xuất khi đã đăng nhập -->
+                                <div class="widget-header">
+                                    <a href="@Url.Action("Logout", "Home")" class="widget-view">
+                                        <div class="icon-area">
+                                            <i class="fa fa-sign-out-alt"></i> <!-- Icon cho Logout -->
+                                        </div>
+                                        <small class="text">Đăng xuất</small>
+                                    </a>
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- Nút Đăng nhập khi chưa đăng nhập -->
+                                <div class="widget-header">
+                                    <a href="@Url.Action("Login", "Home")" class="widget-view">
+                                        <div class="icon-area">
+                                            <i class="fa fa-sign-in-alt"></i> <!-- Icon cho Login -->
+                                        </div>
+                                        <small class="text">Đăng nhập</small>
+                                    </a>
+                                </div>
+
+                                <!-- Nút Đăng ký khi chưa đăng nhập -->
+                                <div class="widget-header">
+                                    <a href="@Url.Action("Register", "Home")" class="widget-view">
+                                        <div class="icon-area">
+                                            <i class="fa fa-user-plus"></i> <!-- Icon cho Register -->
+                                        </div>
+                                        <small class="text">Đăng ký</small>
+                                    </a>
+                                </div>
+                            }
                         </div> <!-- widgets-wrap.// -->
-                    </div> <!-- col.// -->
+                    </div>
+
+
                 </div> <!-- row.// -->
             </div> <!-- container.// -->
         </section> <!-- header-main .// -->
@@ -126,7 +133,7 @@
         <nav class="navbar navbar-main navbar-expand-lg border-bottom">
             <div class="container">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Chuyển đổi menu">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -138,14 +145,14 @@
                                 <a class="dropdown-item" href="#">Máy móc</a>
                                 <a class="dropdown-item" href="#">Điện tử</a>
                                 <a class="dropdown-item" href="#">Vải gia dụng</a>
-                                <a class="dropdown-item" href="#">Đồ gia dụng và bếp</a>
+                                <a class="dropdown-item" href="#">Nhà và bếp</a>
                                 <a class="dropdown-item" href="#">Dịch vụ và thiết bị</a>
-                                <a class="dropdown-item" href="#">Sản phẩm chăm sóc sức khỏe</a>
+                                <a class="dropdown-item" href="#">Mặt hàng chăm sóc sức khỏe</a>
                                 <a class="dropdown-item" href="#">Đồ chơi và sở thích</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sẵn sàng giao hàng</a>
+                            <a class="nav-link" href="#">Sẵn sàng vận chuyển</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Hội chợ thương mại</a>
@@ -159,16 +166,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Trang demo</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="page-index.html">Trang chính</a>
+                                <a class="dropdown-item" href="page-index.html">Trang chủ</a>
                                 <a class="dropdown-item" href="page-category.html">Tất cả danh mục</a>
-                                <a class="dropdown-item" href="page-listing-large.html">Danh sách sản phẩm</a>
-                                <a class="dropdown-item" href="page-listing-grid.html">Lưới sản phẩm</a>
+                                <a class="dropdown-item" href="page-listing-large.html">Danh sách lớn</a>
+                                <a class="dropdown-item" href="page-listing-grid.html">Mô hình lưới</a>
                                 <a class="dropdown-item" href="page-shopping-cart.html">Giỏ hàng</a>
                                 <a class="dropdown-item" href="page-detail-product.html">Chi tiết sản phẩm</a>
-                                <a class="dropdown-item" href="page-content.html">Thông tin</a>
+                                <a class="dropdown-item" href="page-content.html">Thông tin nội dung</a>
                                 <a class="dropdown-item" href="page-user-login.html">Đăng nhập</a>
                                 <a class="dropdown-item" href="page-user-register.html">Đăng ký</a>
-                                <a class="dropdown-item disabled text-muted" href="#">Thêm các thành phần</a>
+                                <a class="dropdown-item disabled text-muted" href="#">Thêm thành phần</a>
                             </div>
                         </li>
                     </ul>
@@ -177,7 +184,7 @@
                             <a class="nav-link" href="#">Tải ứng dụng</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" data-toggle="dropdown">Tiếng Việt</a>
+                            <a class="nav-link dropdown-toggle" href="http://example.com" data-toggle="dropdown">Tiếng Anh</a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="#">Tiếng Nga</a>
                                 <a class="dropdown-item" href="#">Tiếng Pháp</a>

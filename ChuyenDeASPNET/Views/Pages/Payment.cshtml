@@ -10,32 +10,32 @@
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">Delivery info</h4>
+                    <h4 class="card-title mb-3">Thông tin giao hàng</h4>
 
                     <div class="form-row">
                         <div class="form-group col-sm-6">
                             <label class="js-check box active">
                                 <input type="radio" name="dostavka" value="option1" checked>
-                                <h6 class="title">Standart delivery</h6>
-                                <p class="text-muted">Free by airline within 20 days</p>
+                                <h6 class="title">Giao hàng tiêu chuẩn</h6>
+                                <p class="text-muted">Miễn phí qua đường hàng không trong vòng 20 ngày</p>
                             </label> <!-- js-check.// -->
                         </div>
                         <div class="form-group col-sm-6">
                             <label class="js-check box">
                                 <input type="radio" name="dostavka" value="option1">
-                                <h6 class="title">Fast delivery</h6>
-                                <p class="text-muted">Extra 20$ will be charged </p>
+                                <h6 class="title">Giao hàng nhanh</h6>
+                                <p class="text-muted">Phí thêm 20$</p>
                             </label> <!-- js-check.// -->
                         </div>
                     </div> <!-- form row.// -->
 
                     <div class="form-row">
                         <div class="col form-group">
-                            <label>First name</label>
+                            <label>Tên</label>
                             <input type="text" class="form-control" placeholder="">
                         </div> <!-- form-group end.// -->
                         <div class="col form-group">
-                            <label>Last name</label>
+                            <label>Họ</label>
                             <input type="text" class="form-control" placeholder="">
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
@@ -46,16 +46,16 @@
                             <input type="email" class="form-control" placeholder="">
                         </div> <!-- form-group end.// -->
                         <div class="col form-group">
-                            <label>Phone</label>
+                            <label>Số điện thoại</label>
                             <input type="text" class="form-control" placeholder="">
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label>Country</label>
+                            <label>Quốc gia</label>
                             <select id="inputState" class="form-control">
-                                <option> Choose...</option>
+                                <option>Chọn...</option>
                                 <option>Uzbekistan</option>
                                 <option>Russia</option>
                                 <option selected="">United States</option>
@@ -64,12 +64,12 @@
                             </select>
                         </div> <!-- form-group end.// -->
                         <div class="form-group col-md-6">
-                            <label>City</label>
+                            <label>Thành phố</label>
                             <input type="text" class="form-control">
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row.// -->
                     <div class="form-group">
-                        <label>Adress</label>
+                        <label>Địa chỉ</label>
                         <textarea class="form-control" rows="2"></textarea>
                     </div> <!-- form-group// -->
 
@@ -79,15 +79,15 @@
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Payment</h4>
+                    <h4 class="card-title mb-4">Thanh toán</h4>
                     <form role="form" style="max-width:380px;">
                         <div class="form-group">
-                            <label for="username">Name on card</label>
-                            <input type="text" class="form-control" name="username" placeholder="Ex. John Smith" required="">
+                            <label for="username">Tên trên thẻ</label>
+                            <input type="text" class="form-control" name="username" placeholder="Ví dụ: John Smith" required="">
                         </div> <!-- form-group.// -->
 
                         <div class="form-group">
-                            <label for="cardNumber">Card number</label>
+                            <label for="cardNumber">Số thẻ</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" name="cardNumber" placeholder="">
                                 <div class="input-group-append">
@@ -102,13 +102,13 @@
                         <div class="row">
                             <div class="col-md flex-grow-0">
                                 <div class="form-group">
-                                    <label class="hidden-xs">Expiration</label>
+                                    <label class="hidden-xs">Ngày hết hạn</label>
                                     <div class="form-inline" style="min-width: 220px">
                                         <select class="form-control" style="width:100px">
                                             <option>MM</option>
-                                            <option>01 - Janiary</option>
-                                            <option>02 - February</option>
-                                            <option>03 - February</option>
+                                            <option>01 - Tháng 1</option>
+                                            <option>02 - Tháng 2</option>
+                                            <option>03 - Tháng 3</option>
                                         </select>
                                         <span style="width:20px; text-align: center"> / </span>
                                         <select class="form-control" style="width:100px">
@@ -121,12 +121,12 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label data-toggle="tooltip" title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+                                    <label data-toggle="tooltip" title="Mã 3 chữ số ở mặt sau của thẻ">CVV <i class="fa fa-question-circle"></i></label>
                                     <input class="form-control" required="" type="text">
                                 </div> <!-- form-group.// -->
                             </div>
                         </div> <!-- row.// -->
-                        <button class="subscribe btn btn-primary btn-block" type="button"> Confirm  </button>
+                        <button class="subscribe btn btn-primary btn-block" type="button"> Xác nhận </button>
                     </form>
                 </div> <!-- card-body.// -->
             </div> <!-- card .// -->
@@ -136,6 +136,7 @@
 
         </div> <!-- container .//  -->
     </section>
+
     <!-- ========================= SECTION CONTENT END// ========================= -->
 
 

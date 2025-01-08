@@ -397,3 +397,7 @@ C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\EntityFramework.dll
 C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\EntityFramework.SqlServer.dll
 C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\EntityFramework.xml
 C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\EntityFramework.SqlServer.xml
+C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\PagedList.dll
+C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\PagedList.Mvc.dll
+C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\PagedList.xml
+C:\Users\PC\OneDrive\Máy tính\ASP.NET\ChuyenDeASPNET\bin\PagedList.Mvc.xml
