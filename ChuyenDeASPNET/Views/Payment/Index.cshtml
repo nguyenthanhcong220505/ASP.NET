@@ -1,9 +1,8 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿﻿@{
+    ViewBag.Title = "Thanh toán thành công";
 }
-<h2>Thanh toán thành công</h2>
+
+<h2 class="text-center">Thanh toán thành công</h2>
 
 <p class="text-center text-success">Cảm ơn bạn đã mua hàng! Tổng số tiền: <strong>@ViewBag.TotalAmount.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</strong></p>
 
@@ -27,7 +26,7 @@
                     <td>@item.Product.ProductName</td>
                     <td>@item.Quantity</td>
                     <td>@item.Product.Price.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</td>
-                    <td>@(item.Quantity * item.Product.Price).ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</td>
+                    <td>@(item.Quantity * item.Product.Price)đ</td>
                 </tr>
             }
         </tbody>

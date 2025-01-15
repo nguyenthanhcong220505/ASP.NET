@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<ChuyenDeASPNET.Models.CartModel>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,7 +15,7 @@
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Remove", "Cart")',
-                data:  JSON.stringify(model) ,
+                data:  JSON.stringify(model),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function () {
@@ -57,7 +56,7 @@
                                             <figure class="itemside">
                                                 <div class="aside"><img src="~/Content/images/items/@item.Product.ProductImage" class="img-sm"></div>
                                                 <figcaption class="info">
-                                                    <a href="#" class="title text-dark">@item.Product.ProductImage</a>
+                                                    <a href="#" class="title text-dark">@item.Product.ProductName</a>
                                                 </figcaption>
                                             </figure>
                                         </td>
@@ -86,13 +85,13 @@
                     </table>
 
                     <div class="card-body border-top">
-                        <a href="#" class="btn btn-primary float-md-right"> Thực hiện mua hàng <i class="fa fa-chevron-right"></i> </a>
-                        <a href="#" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Tiếp tục mua sắm </a>
+                        <a href="@Url.Action("Index", "Payment")" class="btn btn-primary float-md-right"> Thanh toán <i class="fa fa-chevron-right"></i> </a>
+                        <a href="@Url.Action("Index", "Home")" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Tiếp tục mua sắm </a>
                     </div>
                 </div> <!-- card.// -->
 
                 <div class="alert alert-success mt-3">
-                    <p class="icontext"><i class="icon text-success fa fa-truck"></i> Giao hàng miễn phí trong 1-2 tuần</p>
+                    <p class="icontext"><i class="icon text-success fa fa-truck"></i> Giao hàng miễn phí trong vòng 1-2 tuần</p>
                 </div>
 
             </main> <!-- col.// -->
@@ -128,7 +127,7 @@
                         </dl>
                         <hr>
                         <p class="text-center mb-3">
-                            <img src="images/misc/payments.png" height="26">
+                            <img src="~/Content/images/misc/payments.png" height="26">
                         </p>
 
                     </div> <!-- card-body.// -->
